@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CET-6 备考冲刺站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">C6</div>
+          <div>
+            <div class="brand-name">CET-6 备考冲刺站</div>
+            <div class="brand-sub">英语六级 · 提高效率 · 稳步提分</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#focus">今日计划</a>
+          <a href="#skills">备考策略</a>
+          <a href="#writing">写作模板</a>
+        </nav>
+        <button id="focusBtn" class="primary-btn">开始 25 分钟专注</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">英语六级备考平台</span>
+            <h1>把碎片时间，变成高分积累</h1>
+            <p>
+              词汇、听力、阅读和写作串联起来，帮你用结构化计划提升英语综合能力。
+            </p>
+            <div class="stats">
+              <div class="stat-card">
+                <strong>30</strong>
+                <span>今日词汇</span>
+              </div>
+              <div class="stat-card">
+                <strong>3</strong>
+                <span>听力练习</span>
+              </div>
+              <div class="stat-card">
+                <strong>2</strong>
+                <span>阅读篇章</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="timer-card">
+              <p class="timer-label">当前专注时长</p>
+              <div id="timer" class="timer-display">25:00</div>
+              <div class="timer-actions">
+                <button id="timerToggle" class="primary-btn small">开始</button>
+                <button id="timerReset" class="ghost-btn small">重置</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="focus" class="content-grid">
+          <div class="card">
+            <div class="card-head">
+              <h3>今日目标</h3>
+              <span class="pill success">已完成 2 / 4</span>
+            </div>
+            <ul class="task-list">
+              <li class="task done">
+                <div>
+                  <span class="task-tag">词汇</span>
+                  <strong>背 30 个六级核心词</strong>
+                </div>
+                <button class="task-btn done-btn">已完成</button>
+              </li>
+              <li class="task done">
+                <div>
+                  <span class="task-tag">听力</span>
+                  <strong>完成 1 段长对话</strong>
+                </div>
+                <button class="task-btn done-btn">已完成</button>
+              </li>
+              <li class="task">
+                <div>
+                  <span class="task-tag">阅读</span>
+                  <strong>做 2 篇 Matching 题</strong>
+                </div>
+                <button class="task-btn">待完成</button>
+              </li>
+              <li class="task">
+                <div>
+                  <span class="task-tag">写作</span>
+                  <strong>写一篇 150 词作文</strong>
+                </div>
+                <button class="task-btn">待完成</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h3>今日 30 词</h3>
+              <span class="pill">记忆卡片</span>
+            </div>
+            <div class="word-card">
+              <div class="word-meta">
+                <p class="word-label">今日词汇 <span id="wordProgress">01 / 30</span></p>
+                <span id="wordExamTag" class="exam-tag">六级高频</span>
+              </div>
+              <h4 id="wordText">meticulous</h4>
+              <p id="wordMeaning" class="word-meaning">极其细致的；一丝不苟的</p>
+              <p id="wordMemory" class="word-memory"><strong>记忆法：</strong>me + tick（刻度）+ ulous：对每个刻度都较真，就是一丝不苟。</p>
+              <p id="wordExample" class="word-example">The scientist is meticulous in recording every detail.</p>
+              <div id="wordSense" class="word-sense"></div>
+              <div class="similar-wrap">
+                <span class="similar-title">易混 / 形近词</span>
+                <div id="similarWords" class="similar-words"></div>
+              </div>
+            </div>
+            <div class="word-actions">
+              <button id="masterWord" class="secondary-btn">标记已掌握</button>
+              <button id="nextWord" class="ghost-btn">下一个</button>
+            </div>
+          </div>
+
+          <div class="card wide-card">
+            <div class="card-head">
+              <h3>真题速练</h3>
+              <span class="pill info">阅读理解</span>
+            </div>
+            <div id="quizCard" class="quiz-card">
+              <p class="quiz-badge">Question 1</p>
+              <h4 id="questionText">The passage mainly suggests that economic growth should be balanced with environmental protection.</h4>
+              <div id="options" class="options"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="bottom-grid">
+          <div class="card">
+            <div class="card-head">
+              <h3>备考策略</h3>
+              <span class="pill accent">做题方法</span>
+            </div>
+            <div class="tips-row">
+              <div class="tip-item">
+                <span>01</span>
+                <h4>听力</h4>
+                <p>先抓主旨，再定位关键词，减少无关信息干扰。</p>
+              </div>
+              <div class="tip-item">
+                <span>02</span>
+                <h4>阅读</h4>
+                <p>先看题干再看文章，快速锁定句子和段落逻辑。</p>
+              </div>
+              <div class="tip-item">
+                <span>03</span>
+                <h4>写作</h4>
+                <p>开头结论句 + 中间论证 + 结尾总结，结构清晰更稳。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h3>学习路线</h3>
+              <span class="pill">7 天规划</span>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="day">Day 1</span>
+                <p>词汇基础 + 听力短对话</p>
+              </div>
+              <div class="timeline-item">
+                <span class="day">Day 2</span>
+                <p>阅读技巧 + 翻译练习</p>
+              </div>
+              <div class="timeline-item">
+                <span class="day">Day 3</span>
+                <p>写作模板训练 + 复盘</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="writing" class="card writing-card">
+          <div class="card-head">
+            <h3>作文模板</h3>
+            <span class="pill success">高频题型</span>
+          </div>
+          <div class="template-grid">
+            <article>
+              <strong>观点论证</strong>
+              <p>In recent years, ... The benefits are obvious. However, ...</p>
+            </article>
+            <article>
+              <strong>利弊分析</strong>
+              <p>On the one hand, ... On the other hand, ... Therefore, ...</p>
+            </article>
+            <article>
+              <strong>校园话题</strong>
+              <p>It is widely accepted that ... A practical solution is to ...</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>坚持每天 30 分钟，六级分数会稳定提升。</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
